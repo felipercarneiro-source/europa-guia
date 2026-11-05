@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Restaurantes, bares e doces da Espanha e de Paris, filtráveis por cidade, cozinha, preço e dificuldade de reserva — garimpados do Instagram de @feliperacarneiro: o que amigos realmente comeram e o que ele salvou. A lista é viva e muda com o tempo.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#EFEEE9" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#121820" media="(prefers-color-scheme:dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guia Europa">
+<meta property="og:description" content="Restaurantes, bares e doces da Espanha e de Paris, filtráveis por cidade, cozinha, preço e dificuldade de reserva — garimpados do Instagram de @feliperacarneiro: o que amigos realmente comeram e o que ele salvou. A lista é viva e muda com o tempo.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%8D%B7</text></svg>">
+</head>
+<body>
+<title>Guia Europa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap">
+<style>
+:root{
+  --paper:#EFEEE9; --paper2:#E4E2DA; --line:#D3D0C6; --card:#F7F6F2;
+  --ink:#17212B; --ink2:#5C6672; --ink3:#8A929C;
+  --ai:#24467C; --ai-soft:#DEE4F0;
+  --shu:#A93A27; --kohaku:#8C5F14; --matsu:#2F6455;
+  --shadow:0 1px 2px rgba(23,33,43,.06),0 6px 18px -12px rgba(23,33,43,.28);
+  --r:11px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121820; --paper2:#1A212A; --line:#2A333E; --card:#1B232C;
+    --ink:#E9E6DE; --ink2:#98A2AD; --ink3:#6E7883;
+    --ai:#8FB2E8; --ai-soft:#22344F;
+    --shu:#E28067; --kohaku:#D5A257; --matsu:#63B8A0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121820; --paper2:#1A212A; --line:#2A333E; --card:#1B232C;
+  --ink:#E9E6DE; --ink2:#98A2AD; --ink3:#6E7883;
+  --ai:#8FB2E8; --ai-soft:#22344F;
+  --shu:#E28067; --kohaku:#D5A257; --matsu:#63B8A0;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--ai);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--ai);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- capa ---------- */
+header{padding:44px 0 26px;border-bottom:1px solid var(--line)}
+.kicker{font-size:11.5px;letter-spacing:.19em;text-transform:uppercase;color:var(--ink3);font-weight:700}
+.title{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:10px 0 0}
+h1{font-family:"Zen Old Mincho",Georgia,serif;font-weight:900;letter-spacing:-.02em;
+   font-size:clamp(44px,8vw,84px);line-height:.94;margin:0}
+.jp{font-family:"Zen Old Mincho",serif;font-size:clamp(26px,4vw,40px);color:var(--ink3);
+    letter-spacing:.12em;font-weight:400}
+.lede{margin:18px 0 0;max-width:62ch;font-size:16.5px;color:var(--ink2);text-wrap:pretty}
+.lede b{color:var(--ink);font-weight:700}
+.nota{margin:14px 0 0;max-width:70ch;font-size:13px;color:var(--ink3);line-height:1.6}
+.nota b{color:var(--ink2);font-weight:700}
+.stats{display:flex;flex-wrap:wrap;gap:26px 40px;margin:26px 0 0}
+.stat b{display:block;font-family:"Zen Old Mincho",serif;font-size:34px;line-height:1;
+        font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--ink3);letter-spacing:.04em}
+
+/* ---------- controles ---------- */
+.bar{position:sticky;top:0;z-index:30;background:var(--paper);
+     border-bottom:1px solid var(--line);padding:12px 0 10px;margin-bottom:22px}
+.bar::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;
+  background:linear-gradient(var(--paper),transparent);pointer-events:none}
+.searchrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.oque{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.oque button{font:inherit;font-size:14px;font-weight:800;padding:9px 16px;border-radius:999px;
+  border:2px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer}
+.oque button .ct{opacity:.5;margin-left:6px;font-weight:600;font-variant-numeric:tabular-nums}
+.oque button[aria-pressed=true]{color:#fff}
+.oque button[data-oque=comer][aria-pressed=true]{background:#24467C;border-color:#24467C}
+.oque button[data-oque=hotel][aria-pressed=true]{background:#A93A27;border-color:#A93A27}
+.oque button[data-oque=passeio][aria-pressed=true]{background:#A93A27;border-color:#A93A27}
+input[type=search]{flex:1;min-width:210px;font:inherit;font-size:15px;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:9px 13px}
+input[type=search]::placeholder{color:var(--ink3)}
+#facets{max-height:min(44vh,400px);overflow-y:auto;overscroll-behavior:contain;
+        margin-top:2px;padding-bottom:2px}
+#facets.hidden{display:none}
+.facet{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:9px}
+.resumo{margin-top:8px;font-size:12.5px;color:var(--ink2)}
+.resumo b{color:var(--ink)}
+.flab{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);
+      font-weight:700;min-width:58px}
+.chip{font:inherit;font-size:12.5px;line-height:1;padding:7px 11px;border-radius:999px;
+  border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;
+  transition:background .12s,color .12s,border-color .12s;white-space:nowrap}
+.chip:hover{border-color:var(--ai);color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ai);border-color:var(--ai);color:#fff;font-weight:700}
+.chip .ct{opacity:.55;margin-left:5px;font-variant-numeric:tabular-nums}
+.chip.tog[aria-pressed=true]{background:var(--matsu);border-color:var(--matsu)}
+.chip.star[aria-pressed=true]{background:var(--kohaku);border-color:var(--kohaku)}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:12px;
+      margin:14px 0 4px;font-size:12.5px;color:var(--ink3);flex-wrap:wrap}
+.linkbtn{background:none;border:0;font:inherit;font-size:12.5px;color:var(--ai);
+  cursor:pointer;padding:0;text-decoration:underline}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+      align-items:start;padding-bottom:8px}
+.sech{grid-column:1/-1;margin:18px 0 0;padding-bottom:6px;border-bottom:1px solid var(--line);
+  font-family:"Zen Old Mincho",serif;font-size:22px;font-weight:900;letter-spacing:-.01em}
+.sech:first-child{margin-top:4px}
+.sech small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:12.5px;font-weight:400;
+  color:var(--ink3);margin-left:8px;letter-spacing:.03em}
+.c{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+   padding:14px 15px 13px;box-shadow:var(--shadow);position:relative}
+.c.hi{border-color:var(--ai)}
+.c{border-left:4px solid var(--line)}
+.c.cat-food{border-left-color:#24467C}
+/* escala de preço: verde barato · amarelo médio · prata caro · dourado muito caro */
+.c.pr1{border-left-color:#2F8A57;background:color-mix(in srgb,#3FA36A 22%,var(--card))}
+.c.pr2{border-left-color:#D97A3E;background:color-mix(in srgb,#E8955C 26%,var(--card))}
+.c.pr3{border-left-color:#8A93A0;background:color-mix(in srgb,#8A93A0 26%,var(--card))}
+.c.pr4{border-left-color:#B98A1C;background:color-mix(in srgb,#C99C2E 30%,var(--card))}
+.c.cat-hotel{border-left-color:#A93A27;background:color-mix(in srgb,#A93A27 14%,var(--card))}
+.c.cat-mich .cn a{color:#8C5F14}
+.badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;padding:3px 8px;border-radius:999px;margin-bottom:7px}
+.badge.mich{background:#B98A1C;color:#fff}
+.badge.duo{background:#24467C;color:#fff}
+.badge.ver{background:#A93A27;color:#fff}
+.cn a{color:inherit;text-decoration:none}
+.cat-food .cn a{color:#24467C}
+.cat-mich .cn a{color:#8C5F14}
+.cat-hotel .cn a{color:#A93A27}
+.mstar{color:#8C5F14;font-weight:900;margin-right:2px}
+.cn a:hover{text-decoration:underline;text-decoration-color:var(--ai)}
+.cn{font-family:"Zen Old Mincho",serif;font-size:19px;font-weight:800;line-height:1.2;
+    letter-spacing:-.01em;padding-right:30px;text-wrap:balance}
+.ck{font-family:"Zen Old Mincho",serif;color:var(--ink3);font-size:13.5px;font-weight:400;
+    margin-top:1px;letter-spacing:.04em}
+.cloc{font-size:12.5px;color:var(--ink3);margin-top:5px}
+.cloc .t{color:var(--ink2);font-weight:700}
+.cesp{font-size:13.5px;color:var(--ink2);margin-top:7px;line-height:1.45}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;align-items:center}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.02em;padding:3px 8px;border-radius:5px;
+     border:1px solid var(--line);color:var(--ink2);background:var(--paper2)}
+.tag.ok{color:var(--matsu);border-color:color-mix(in srgb,var(--matsu) 40%,transparent)}
+.tag.med{color:var(--kohaku);border-color:color-mix(in srgb,var(--kohaku) 40%,transparent)}
+.tag.hard{color:var(--kohaku);border-color:color-mix(in srgb,var(--kohaku) 55%,transparent);
+          background:color-mix(in srgb,var(--kohaku) 10%,transparent)}
+.tag.shut{color:var(--shu);border-color:color-mix(in srgb,var(--shu) 50%,transparent);
+          background:color-mix(in srgb,var(--shu) 10%,transparent)}
+.tag.yen{font-variant-numeric:tabular-nums}
+.tag em{font-style:normal;font-weight:400;color:var(--ink3);margin-left:1px}
+.who{margin-top:9px;font-size:12.5px;color:var(--ink2);
+     border-top:1px dashed var(--line);padding-top:8px}
+.who b{color:var(--ai);font-weight:700}
+.who .lbl{color:var(--ink3);font-weight:400}
+.who.g{color:var(--ink3)}
+.acts{display:flex;gap:12px;margin-top:9px;font-size:12.5px;flex-wrap:wrap}
+.fav{position:absolute;top:10px;right:10px;background:none;border:0;cursor:pointer;
+     font-size:17px;line-height:1;color:var(--ink3);padding:3px}
+.fav[aria-pressed=true]{color:var(--kohaku)}
+.fav:hover{color:var(--kohaku)}
+
+/* ---------- seções ---------- */
+section{margin:44px 0 0;padding-top:26px;border-top:1px solid var(--line);scroll-margin-top:104px}
+#lista{scroll-margin-top:96px}
+h2{font-family:"Zen Old Mincho",serif;font-size:26px;font-weight:900;letter-spacing:-.015em;margin:0}
+.sub{color:var(--ink2);font-size:14.5px;margin:7px 0 18px;max-width:64ch}
+.people{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.p{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px;
+   text-align:left;font:inherit;cursor:pointer;color:var(--ink)}
+.p:hover{border-color:var(--ai)}
+.p .nm{font-weight:800;font-size:14.5px}
+.p .hd{font-size:12px;color:var(--ink3)}
+.p .ds{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.p .qt{float:right;font-family:"Zen Old Mincho",serif;font-size:20px;font-weight:900;color:var(--ai);
+       font-variant-numeric:tabular-nums}
+.gwrap{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card)}
+.grow{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:baseline;
+      padding:9px 13px;border-bottom:1px solid var(--line);font-size:13.5px}
+.grow:last-child{border-bottom:0}
+.grow .gn{font-weight:700}
+.grow .gl{color:var(--ink3);font-size:12px;font-weight:400}
+.grow .gy{color:var(--ink2);font-variant-numeric:tabular-nums;font-size:12.5px;white-space:nowrap}
+.warn{background:color-mix(in srgb,var(--kohaku) 12%,transparent);
+      border:1px solid color-mix(in srgb,var(--kohaku) 35%,transparent);
+      border-radius:var(--r);padding:12px 14px;font-size:13.5px;color:var(--ink2);margin-bottom:16px}
+.warn b{color:var(--ink)}
+.empty{padding:40px 0;text-align:center;color:var(--ink3)}
+footer{margin:52px 0 60px;padding-top:22px;border-top:1px solid var(--line);
+       font-size:12.5px;color:var(--ink3);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.hidden{display:none!important}
+@media (max-width:640px){
+  header{padding:30px 0 20px}
+  .stats{gap:18px 26px}.stat b{font-size:27px}
+  .flab{min-width:0;width:100%;margin-bottom:-2px}
+  .grid{grid-template-columns:1fr}
+  .grow{grid-template-columns:1fr auto}
+}
+</style>
+
+<header><div class="wrap">
+  <div class="kicker">Guia pessoal · garimpado do meu Instagram</div>
+  <div class="title"><h1>Europa</h1><span class="jp">à mesa</span></div>
+  <p class="lede">Começou como a semente de um guia da Península Ibérica e ganhou corpo com uma
+  viagem: o <b>Fabio Moon</b> e a <b>Kaori</b> comendo pelo País Basco, por Barcelona e por Paris,
+  postando cada balcão. Juntei o que eles mostraram com o que eu fui salvando de San Sebastián,
+  Getaria, Barcelona e Madri — sempre com <b>procedência</b>: quem foi, se dá pra sentar, quanto custa.</p>
+  <p class="nota"><b>Em cada casa</b>: o nome abre no Google Maps, <b>@</b> vai para o Instagram do
+  lugar e <b>post</b> abre o post de onde a indicação veio. Horário, folga e reserva estão no texto,
+  com a fonte — e quando as fontes discordam, está dito.</p>
+  <p class="nota">Preço por pessoa, sem vinho: <b>até €30</b> · <b>€30–70</b> · <b>€70–150</b> · <b>€150+</b>.
+  Bar, doce e loja ficam sem faixa.</p>
+  <p class="nota">O fundo do card é o preço:
+  <b style="background:color-mix(in srgb,#2F8A57 12%,transparent);padding:1px 7px;border-radius:6px;color:#2F8A57">verde = barato</b>
+  <b style="background:color-mix(in srgb,#E8955C 20%,transparent);padding:1px 7px;border-radius:6px;color:#9C4E1B">laranja-claro = médio</b>
+  <b style="background:color-mix(in srgb,#9AA2AC 16%,transparent);padding:1px 7px;border-radius:6px;color:#5c656f">prata = caro</b>
+  <b style="background:color-mix(in srgb,#B98A1C 18%,transparent);padding:1px 7px;border-radius:6px;color:#8C5F14">dourado = muito caro</b>
+  · <b style="color:#8C5F14">★ = estrela Michelin</b>.</p>
+</div></header>
+
+<div class="bar"><div class="wrap">
+  
+  <div class="searchrow">
+    <input type="search" id="q" placeholder="Buscar por nome, bairro, prato, cozinha…"
+      aria-label="Buscar lugares">
+    <button class="chip" id="ftoggle" aria-pressed="false" aria-controls="facets">Filtros</button>
+    <button class="chip tog" id="soAmigo" aria-pressed="false">Só onde um amigo foi</button>
+    <button class="chip star" id="rotn" aria-pressed="false">★ roteiro</button>
+  </div>
+  <div id="facets">
+    <div class="facet" id="fCidade"><span class="flab">Cidade</span></div>
+    <div class="facet" id="fCozinha"><span class="flab">Cozinha</span></div>
+    <div class="facet" id="fAcesso"><span class="flab">Acesso</span></div>
+    <div class="facet" id="fPreco"><span class="flab">Preço</span></div>
+  </div>
+  <div class="resumo hidden" id="resumo"></div>
+</div></div>
+
+<main class="wrap" id="lista">
+  <div class="meta">
+    <span id="cont"></span>
+    <span>
+      <span id="amigoAtivo" class="hidden">filtrando por <b id="amigoNome"></b> ·
+        <button class="linkbtn" id="tiraAmigo">tirar</button> · </span>
+      <button class="linkbtn" id="limpa">limpar filtros</button>
+    </span>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <section>
+    <h2>Quem me guiou</h2>
+    <p class="sub">O filtro não é algoritmo — são pessoas que foram. Clique para ver só os lugares de cada um.
+    O resto da lista são achados que eu salvei no Instagram, cada um com o perfil de onde veio.</p>
+    <div class="people"><button class="p" data-amigo="fabmoon"><span class="qt">23</span><div class="nm">Fabio Moon</div><div class="hd">@fabmoon</div><div class="ds">quadrinista; os bistrôs de Paris e o roteiro de pintxos de Donostia</div></button><button class="p" data-amigo="kaorichichijima"><span class="qt">7</span><div class="nm">Kaori Muranaka</div><div class="hd">@kaorichichijima</div><div class="ds">chef do Quito Quito Izakaya; a Paris dos stories, de feira a três estrelas</div></button></div>
+  </section>
+
+  <footer>
+    <span>Feito a partir do Instagram de <a href="https://instagram.com/feliperacarneiro"
+      target="_blank" rel="noopener">@feliperacarneiro</a> — posts e stories de amigos e o que eu salvei.</span>
+    <span>O ★ do roteiro fica salvo só neste navegador.</span>
+  </footer>
+</main>
+
+<script id="dados" type="application/json">{"lugares":[{"n":"La Cuchara de San Telmo","t":"Pintxos","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"lacucharadesantelmo","esp":"Pintxos quentes feitos na hora — orelha, cordeiro e foie, na lista do Fabio","d":"Santa Korda Kalea 4 (a entrada é pela viela, no quarteirão da 31 de Agosto). Pintxo, meia ração ou ração; carrillera estufada, foie na chapa com compota de maçã, orelha prensada. Média de uns €40 sem bebida (Macarfi). Fecha segunda.","pr":"$$","prn":2,"ac":"livre","acl":"Chega e senta","act":"Balcão, sem reserva conhecida; fecha segunda.","by":["fabmoon"],"bg":["lacucharadesantelmo"],"src":"amigo","post":"https://www.instagram.com/p/DfIpLvYDy6Y/","mi":false,"url":"","id":1,"prt":"€30–70"},{"n":"Borda Berri","t":"Pintxos","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"","esp":"Bacalhau ao pil pil e bochecha de boi — pintxos de cozinha, sem nada exposto no balcão","d":"Fermín Calbetón 12. \"Aquí se guisa\": risoto de Idiazabal, carrillera ao vinho tinto, kokotxas ao pil pil. Média de uns €25 (Macarfi). Fecha domingo, segunda e terça no almoço (Yonder).","pr":"$","prn":1,"ac":"livre","acl":"Chega e senta","act":"Balcão; fecha domingo, segunda e terça no almoço.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfIpLvYDy6Y/","mi":false,"url":"","id":2,"prt":"até €30"},{"n":"Bar Néstor","t":"Pintxos e txuleta","g":"Asador e brasa","c":"San Sebastián","b":"Parte Vieja","ig":"barnestor1980","esp":"\"A melhor carne do mundo\" e a salada de tomate, segundo o Fabio — e a tortilla que acaba em minutos","d":"Pescadería (Arrandegi) 11. Só três pratos: tomate, pimentão e txuleta de vaca velha que você escolhe crua (~€70 o txuletón para dois). A tortilla sai duas vezes por dia, às 13h e às 20h, 16 porções cada, com lista na abertura. Horários divergem entre fontes (Afar × Yonder).","pr":"$$","prn":2,"ac":"fila","acl":"Fila","act":"Sem reserva: para a tortilla, chegue uma hora antes e ponha o nome na lista.","by":["fabmoon"],"bg":["carlotalpunto"],"src":"amigo","post":"https://www.instagram.com/p/DfIpLvYDy6Y/","mi":false,"url":"","id":3,"prt":"€30–70"},{"n":"Ganbara","t":"Pintxos","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"","esp":"Cogumelos, navalhas, gambas ao alho e besugo — a parada do Fabio para produto","d":"San Jerónimo 21. Balcão de pintxos e sala no porão. No Guia Michelin 2026 com selo \"Iconic\", sem estrela. Terça a sábado, 12h30–15h30 e 19h–22h30; fecha domingo e segunda (Michelin; a Yonder diz que terça só abre à noite).","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"A sala aceita reserva pelo telefone +34 943 42 25 75; o balcão é chegar.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfIpLvYDy6Y/","mi":false,"url":"","id":4,"prt":"€30–70"},{"n":"Bar Sport","t":"Pintxos","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"barsport_ss","esp":"O foie na chapa e o creme de ouriço — primeira parada da rota de pintxos","d":"Fermín Calbetón 10. Txangurro gratinado, ouriço, chipirón recheado. Média de uns €25 sem bebida (Macarfi); na rota da @carlotalpunto, creme de ouriço €4,30 e foie €5,70.","pr":"$","prn":1,"ac":"livre","acl":"Chega e senta","act":"Balcão.","by":[],"bg":["barsport_ss","carlotalpunto"],"src":"salvo","post":"https://www.instagram.com/p/DfPBC_EFMjC/","mi":false,"url":"","id":5,"prt":"até €30"},{"n":"Casa Gandarias","t":"Pintxos e restaurante","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"casagandarias","esp":"O pintxo de txuleta da Parte Vieja","d":"31 de Agosto 23. Pintxos na frente (a maioria €2–4, Yonder) e restaurante à la carte nos fundos. Aberto todo dia, 11h–0h.","pr":"$$","prn":2,"ac":"livre","acl":"Chega e senta","act":"Balcão sem reserva; o restaurante reserva pelo +34 943 426 362.","by":[],"bg":["carlotalpunto"],"src":"salvo","post":"https://www.instagram.com/p/DeiFy11MJno/","mi":false,"url":"","id":6,"prt":"€30–70"},{"n":"Casa Urola","t":"Pintxos e cozinha basca","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"casaurola","esp":"Balcão de pintxos e sala de cozinha basca — cogumelos na brasa na temporada","d":"Fermín Calbetón 20. Peixes planos na brasa e kokotxas de merluza. No Guia Michelin (sem estrela), €€€. Segunda e de quinta a domingo, 12h–15h15 e 19h–23h15; fecha terça e quarta.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva grátis pelo site do Michelin ou +34 943 44 13 71.","by":[],"bg":["casaurola","topjaw"],"src":"salvo","post":"https://www.instagram.com/p/DewU46zDcck/","mi":false,"url":"","id":7,"prt":"€70–150"},{"n":"Bar Txepetxa","t":"Pintxos de anchova","g":"Pintxos e balcão","c":"San Sebastián","b":"Parte Vieja","ig":"bartxepetxa","esp":"A anchova marinada desde 1972 — com creme de txangurro ou jardinera","d":"Pescadería 5 (Infatuation; a Yonder dá Calle Mayor 18 — divergência). Pintxos de anchova a €2–3. Fecha domingo à noite, segunda e terça no almoço.","pr":"$","prn":1,"ac":"livre","acl":"Chega e senta","act":"Balcão.","by":[],"bg":["bartxepetxa","topjaw"],"src":"salvo","post":"https://www.instagram.com/p/CwhcQ1CN3sW/","mi":false,"url":"","id":8,"prt":"até €30"},{"n":"Bar Antonio","t":"Pintxos","g":"Pintxos e balcão","c":"San Sebastián","b":"Centro","ig":"antoniobarss","esp":"A tortilla de 28 ovos, fora da Parte Vieja","d":"Bergara 3. Ravioli de lagostim ao Martini, rabo crocante. Pintxos a partir de €4,50 (Yonder). Todo dia 9h–0h, até 1h sexta e sábado. A tortilla sai até as 12h ou depois das 18h30 (@carlotalpunto).","pr":"$","prn":1,"ac":"livre","acl":"Chega e senta","act":"Balcão.","by":[],"bg":["antoniobarss","taste.2good"],"src":"salvo","post":"https://www.instagram.com/p/DeYwiIRtDFo/","mi":false,"url":"","id":9,"prt":"até €30"},{"n":"Aitana","t":"Cozinha basca autoral","g":"Bistrô","c":"San Sebastián","b":"Centro","ig":"aitanadonostia","esp":"Cozinha basca autoral de Igor Arrasate e Alberto Ituarte","d":"Easo 6 (Centro, fora da Parte Vieja). Tiradito de hamachi, bacalhau na brasa, entrecot. Média de uns €60, pratos de €7 a €37 (Neo2, 2024).","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"Reserva pelo 943 06 31 97.","by":[],"bg":["aitanadonostia","topjaw"],"src":"salvo","post":"https://www.instagram.com/p/DdoR6Asteyb/","mi":false,"url":"","id":10,"prt":"€30–70"},{"n":"Akerbeltz","t":"Bar","g":"Bar e vinho","c":"San Sebastián","b":"Porto","ig":"akerbeltzdonostia","esp":"O bar sobre o porto, no fim da Parte Vieja","d":"Mari Kalea 19. O post salvo é sobre os vinhos de Ganevat, mas a fonte que achei o descreve pela cerveja artesanal. Todo dia 16h–23h, até 1h no fim de semana (In Your Pocket).","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"","by":[],"bg":["akerbeltzdonostia","topjaw"],"src":"salvo","post":"https://www.instagram.com/p/DSUg0tBCMzr/","mi":false,"url":"","id":11,"prt":""},{"n":"Bar Desy","t":"Hambúrguer","g":"Pintxos e balcão","c":"San Sebastián","b":"Gros","ig":"bar_desy","esp":"O hambúrguer de Gros que os cozinheiros do AMA indicam","d":"Ronda Kalea 4. Solete da Guía Repsol (\"Soletes de los Cocineros\"). Menos de €35 (Repsol). A Repsol não diz se a carne é de txuleta, como dizem os posts.","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"A Repsol diz que aceita reserva por e-mail.","by":[],"bg":["vanliferoundeurope","sachinobaid"],"src":"salvo","post":"https://www.instagram.com/p/DfSPnr6sCVT/","mi":false,"url":"","id":12,"prt":"€30–70"},{"n":"Kaia Kaipe","t":"Peixe na brasa","g":"Peixe e marisco","c":"Getaria","b":"Porto","ig":"restaurantekaia","esp":"O rodovalho que o Fabio chamou de \"o melhor peixe que eu já comi na minha vida\"","d":"General Arnao 4, sobre o porto de Getaria. Rodovalho na brasa para dois, camarões grelhados. No Guia Michelin 2026 (sem estrela), €€€. Segunda, quarta, quinta e domingo 13h–15h30; sexta e sábado também 20h–22h30; fecha terça.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva direto: +34 943 14 05 00 ou kaia-kaipe.com.","by":["fabmoon"],"bg":["restaurantekaia"],"src":"amigo","post":"https://www.instagram.com/p/DfIpLvYDy6Y/","mi":false,"url":"","id":13,"prt":"€70–150"},{"n":"Elkano","t":"Peixe na brasa","g":"Peixe e marisco","c":"Getaria","b":"Centro","ig":"elkano_jatetxea","esp":"O rodovalho na brasa de Getaria — uma estrela Michelin","d":"Herrerieta 2. Família Arregi. 1 estrela no Guia Michelin España 2026, €€€€. Terça a quinta só almoço (13h–15h15); sexta e sábado também jantar; fecha domingo e segunda.","pr":"$$$$","prn":4,"ac":"reserva","acl":"Reserva","act":"Reserva direto: +34 943 14 00 24 ou restauranteelkano.com.","by":[],"bg":["elkano_jatetxea","the.hungry.tourist"],"src":"salvo","post":"https://www.instagram.com/p/De9hBhLtbCn/","mi":true,"url":"","id":14,"prt":"€150+"},{"n":"Casa Julián","t":"Asador","g":"Asador e brasa","c":"Tolosa","b":"Centro","ig":"casajuliandetolosa1951","esp":"A txuleta de vaca velha na brasa de Matías Gorrotxategi — o original, em Tolosa","d":"Santa Klara 6, Tolosa. Você escolhe a peça crua (1 a 1,5 kg); piquillos, alho-poró, cheesecake da casa. Média de uns €90 sem bebida (Macarfi). Não confundir com as casas de Madri (Cava Baja 18 e Ibiza 39), que são da mesma família.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva pelo +34 943 671 417; peça mesa perto da grelha.","by":[],"bg":["casajuliandetolosa1951","topjaw"],"src":"salvo","post":"https://www.instagram.com/p/DdG3nq1Md9d/","mi":false,"url":"","id":15,"prt":"€70–150"},{"n":"Asador Etxebarri","t":"Asador","g":"Asador e brasa","c":"Axpe","b":"Praça San Juan","ig":"asadoretxebarrioficial","esp":"A brasa de Bittor Arguinzoniz, no vale de Atxondo — o pil pil do besugo","d":"Praça San Juan 1, Axpe (Atxondo, Bizkaia) — daí o \"San Juan\". 1 estrela Michelin; 2º no 50 Best em 2024 e 2025. Fecha agosto inteiro, segundas e terças, e de 24/12 a 10/01.","pr":"$$$$","prn":4,"ac":"meses","acl":"Meses antes","act":"Reserva é pedido pelo site: resposta em até 7 dias, menu pago antes, de 2 a 6 pessoas.","by":[],"bg":["the.hungry.tourist","alexandereatsworld"],"src":"salvo","post":"https://www.instagram.com/p/DfMyuXcoLSv/","mi":true,"url":"","id":16,"prt":"€150+"},{"n":"Txispa","t":"Brasa nipo-basca","g":"Alta gastronomia","c":"Axpe","b":"San Juan Auzoa","ig":"txispa_restaurant","esp":"O vizinho do Etxebarri, do chef Tetsuro Maeda (ex-subchef de lá) — uma estrela Michelin","d":"San Juan Auzoa 45, Axpe. Enguia kabayaki, txuleta maturada. 1 estrela no Guia Michelin 2026, €€€€. Quarta a domingo 13h–18h30; sexta e sábado à noite funciona o \"Yakitxori\", menu de izakaya; fecha segunda e terça.","pr":"$$$$","prn":4,"ac":"reserva","acl":"Reserva","act":"Reserva online pelo Michelin, +34 691 71 45 86 ou txispa.com.","by":[],"bg":["txispa_restaurant"],"src":"salvo","post":"https://www.instagram.com/p/DXkEyJoiOIl/","mi":true,"url":"","id":17,"prt":"€150+"},{"n":"Quimet & Quimet","t":"Bodega de montaditos","g":"Bar e vinho","c":"Barcelona","b":"Poble-sec","ig":"quimet.quimet","esp":"Conservas e montaditos em pé — \"como eu gosto do Quimet & Quimet\", diz o Fabio","d":"Poeta Cabanyes 25. Minúsculo, só em pé; salmão com iogurte e mel trufado. Segunda a sexta 12h–16h e 19h–22h30; sábado só almoço; fecha domingo (Time Out).","pr":"$","prn":1,"ac":"fila","acl":"Fila","act":"Sem reserva: chegue na abertura, ao meio-dia — a fila passa de 30 min.","by":["fabmoon"],"bg":["shitdresnaps","ragrinds"],"src":"amigo","post":"https://www.instagram.com/p/DfQFDv1D81q/","mi":false,"url":"","id":18,"prt":"até €30"},{"n":"Bar Cañete","t":"Balcão e cozinha de mercado","g":"Pintxos e balcão","c":"Barcelona","b":"Raval","ig":"bar_canete","esp":"O outro favorito do Fabio em Barcelona — pão com tomate, berberechos, alcachofa frita","d":"Unió 17. No Guia Michelin 2026 (sem estrela), €€€. Segunda a sábado 13h–0h; fecha domingo.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva pelo +34 932 70 34 58 ou barcanete.com; sem reserva, ~30 min de fila no balcão.","by":["fabmoon"],"bg":["bar_canete"],"src":"amigo","post":"https://www.instagram.com/p/DfQFDv1D81q/","mi":false,"url":"","id":19,"prt":"€70–150"},{"n":"Botafumeiro","t":"Marisqueira galega","g":"Peixe e marisco","c":"Barcelona","b":"Gràcia","ig":"botafumeirobcn","esp":"A marisqueira galega de Gràcia, cozinha sem intervalo","d":"Gran de Gràcia 81. Marisco fresco, percebes. €50–70 (Time Out), média €70 sem bebida (Macarfi). Todo dia 12h–0h.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Melhor reservar: +34 932 184 230.","by":[],"bg":["botafumeirobcn"],"src":"salvo","post":"https://www.instagram.com/p/DeWlNS0orut/","mi":false,"url":"","id":20,"prt":"€70–150"},{"n":"Alkimia","t":"Alta gastronomia catalã","g":"Alta gastronomia","c":"Barcelona","b":"Sant Antoni","ig":"alkimiarestaurant","esp":"A cozinha catalã moderna de Jordi Vilà — uma estrela Michelin","d":"Ronda Sant Antoni 41, 1º andar da Fábrica Moritz (toque a campainha). Menu único. 1 estrela Michelin 2026, €€€€. Segunda a quinta almoço e jantar; sexta só almoço; fecha fim de semana.","pr":"$$$$","prn":4,"ac":"reserva","acl":"Reserva","act":"Reserva: +34 932 07 61 15 ou alkimia.cat.","by":[],"bg":["alkimiarestaurant","the.hungry.tourist"],"src":"salvo","post":"https://www.instagram.com/p/De9YsLhIHKB/","mi":true,"url":"","id":21,"prt":"€150+"},{"n":"Estimar Barcelona","t":"Peixe e marisco","g":"Peixe e marisco","c":"Barcelona","b":"Born","ig":"estimarzafra","esp":"O balcão de mariscos de Rafa Zafra — a gamba vermelha de Roses","d":"Sant Antoni dels Sombrerers 3. No Guia Michelin (sem estrela), €€€€. Terça a sábado 13h30–15h30 e 20h30–22h30; fecha domingo e segunda.","pr":"$$$$","prn":4,"ac":"reserva","acl":"Reserva","act":"Reserva: +34 932 68 91 97 ou restaurante-estimar.com.","by":[],"bg":["estimarzafra"],"src":"salvo","post":"https://www.instagram.com/p/DfEyBfjNNJe/","mi":false,"url":"","id":22,"prt":"€150+"},{"n":"Els Casals","t":"Fazenda à mesa","g":"Alta gastronomia","c":"Sagàs","b":"Berguedà","ig":"elscasals","esp":"Masia do século XVIII com quartos, a 1h30 de Barcelona — uma estrela Michelin","d":"Masía Els Casals, Sagàs. Chef Oriol Rovira; a pularda e a caça na temporada. 1 estrela Michelin 2026, €€€. Só almoço, terça a domingo 13h–15h30; fecha segunda.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva: +34 938 25 12 00 ou elscasals.cat.","by":[],"bg":["elscasals","the.hungry.tourist"],"src":"salvo","post":"https://www.instagram.com/p/Dev9HbPCLJe/","mi":true,"url":"","id":23,"prt":"€70–150"},{"n":"Granja Elena","t":"Café de garfo e almoço","g":"Bistrô","c":"Barcelona","b":"Zona Franca","ig":"granjaelena1974","esp":"Café da manhã \"de garfo\" e almoço de alta cozinha numa casa de família de 1974","d":"Passeig de la Zona Franca 228. Capipota, canelones de Sant Esteve, croquetes. €45–50 (Time Out) ou €60 (Macarfi) — divergência. Segunda a sexta 7h–15h45; sábado até 12h45; fecha domingo.","pr":"$$","prn":2,"ac":"","acl":"","act":"","by":[],"bg":["the.hungry.tourist"],"src":"salvo","post":"https://www.instagram.com/p/DfPN6dCoEXs/","mi":false,"url":"","id":24,"prt":"€30–70"},{"n":"Estimar Madrid","t":"Peixe e marisco","g":"Peixe e marisco","c":"Madri","b":"Barrio de las Letras","ig":"estimarzafra","esp":"A casa madrilena de Rafa Zafra — grandes peixes selvagens","d":"Marqués de Cubas 18. No Guia Michelin (sem estrela), €€€. Terça a sábado 13h30–15h30 e 20h30–22h30; fecha domingo e segunda.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva: +34 914 29 20 52.","by":[],"bg":["estimarzafra"],"src":"salvo","post":"https://www.instagram.com/p/DfEyBfjNNJe/","mi":false,"url":"","id":25,"prt":"€70–150"},{"n":"Zuara Sushi","t":"Sushi e omakase","g":"Alta gastronomia","c":"Madri","b":"Castellana","ig":"zuarasushi","esp":"O balcão de David Arauz, agora dentro do Hyatt Regency Hesperia","d":"Paseo de la Castellana 57. Dois espaços: Zuara Tēburu (mesas) e Zuara Omakase (balcão). A estrela Michelin foi ganha em 2023 no endereço antigo (Pensamiento 28); o guia ainda não confirmou a mudança. Mais de €60 (esMadrid).","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva online, +34 633 46 77 80.","by":[],"bg":["zuarasushi","guilledavila"],"src":"salvo","post":"https://www.instagram.com/p/DfMa9_vj1qj/","mi":false,"url":"","id":26,"prt":"€70–150"},{"n":"L’Avant Comptoir","t":"Balcão de vinhos e tapas","g":"Bar e vinho","c":"Paris","b":"Odéon (6e)","ig":"les_avantcomptoirs","esp":"A orelha de porco que o Fabio e a Kaori comeram no balcão de Yves Camdeborde","d":"São três balcões vizinhos: du Marché (14 rue Lobineau, onde a orelha de porco da Ospital é documentada), de la Terre e de la Mer (3 carrefour de l’Odéon). Taça a partir de €3,50; no du Marché, €16–35 (Le Fooding). Todo dia 12h–23h.","pr":"$","prn":1,"ac":"livre","acl":"Chega e senta","act":"Em pé no balcão, sem reserva.","by":["fabmoon","kaorichichijima"],"bg":["les_avantcomptoirs"],"src":"amigo","post":"https://www.instagram.com/p/DeMvoj8gLDj/","mi":false,"url":"","id":27,"prt":"até €30"},{"n":"Kei","t":"Alta gastronomia","g":"Alta gastronomia","c":"Paris","b":"Louvre (1er)","ig":"","esp":"Três estrelas de Kei Kobayashi — o jantar da Kaori e do Fabio, e o \"fine dining\" da lista dele","d":"5 rue Coq-Héron. 3 estrelas no Guia Michelin France 2026, €€€€. Fecha domingo e segunda; terça a quinta só jantar; sexta e sábado almoço e jantar.","pr":"$$$$","prn":4,"ac":"reserva","acl":"Reserva","act":"Reserva online grátis pelo Michelin, +33 1 42 33 14 74 ou restaurant-kei.fr.","by":["fabmoon","kaorichichijima"],"bg":[],"src":"amigo","post":"","mi":true,"url":"https://guide.michelin.com/us/en/ile-de-france/paris/restaurant/kei","id":28,"prt":"€150+"},{"n":"Bistrot Paul Bert","t":"Bistrô","g":"Bistrô","c":"Paris","b":"Faidherbe (11e)","ig":"","esp":"O steak au poivre e o steak-frites da lista do Fabio","d":"18 rue Paul-Bert. Filé ao molho de pimenta \"famoso\" (Michelin). No Guia Michelin 2026 com selo \"clássico\", sem estrela, €€. Terça a sábado 12h–14h e 19h30–22h30; fecha domingo e segunda.","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"Reserva pelo +33 1 43 72 24 01 (não é difícil, diz a Infatuation).","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":29,"prt":"€30–70"},{"n":"Joséphine “Chez Dumonet”","t":"Bistrô clássico","g":"Bistrô","c":"Paris","b":"Saint-Germain (6e)","ig":"","esp":"O confit de pato da lista do Fabio — a casa mudou de dono em 2026","d":"117 rue du Cherche-Midi. Carta €75–150 (Pudlowski, 2026). Baptiste Roulière (Chez Fernand) assumiu e manteve o chef Adrien Dumonet; nas resenhas de 2026 aparece o pato grelhado, não o confit. Horários divergem (fecha fim de semana × todo dia).","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva pelo +33 1 45 48 52 40 ou TheFork.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":30,"prt":"€70–150"},{"n":"Café des Ministères","t":"Cozinha tradicional","g":"Bistrô","c":"Paris","b":"Invalides (7e)","ig":"","esp":"O vol-au-vent de ris de veau e a terrine de foie gras da lista do Fabio","d":"83 rue de l’Université. Vol-au-vent de ris de veau e aves é o prato da casa (Michelin, Time Out). No Guia Michelin 2026, sem estrela, €€. Fecha sábado e domingo; segunda só jantar.","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"\"Reservas muito recomendadas\" (Michelin): +33 1 45 33 73 34.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":31,"prt":"€30–70"},{"n":"L’Huîtrerie Régis","t":"Bar de ostras","g":"Peixe e marisco","c":"Paris","b":"Saint-Germain (6e)","ig":"","esp":"As ostras da lista do Fabio, num salão minúsculo","d":"3 rue de Montfaucon. Doze ostras Spéciales Papin €39; fórmula 12 ostras + taça €39; plateau €50 (Gault&Millau). Todo dia.","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"Ligue para reservar: +33 1 44 41 10 07.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":32,"prt":"€30–70"},{"n":"Juveniles","t":"Bistrô e bar de vinhos","g":"Bar e vinho","c":"Paris","b":"Palais-Royal (1er)","ig":"","esp":"Gigot e bochecha de porco, segundo o Fabio","d":"47 rue de Richelieu. €36–50 por pessoa, almoço €21 (Le Fooding, 2026). O gigot e a bochecha não aparecem nas resenhas; aparecem o porco da Ferme de Clavisy e o riz au lait. Horários divergem.","pr":"$$","prn":2,"ac":"reserva","acl":"Reserva","act":"Reserva pelo +33 1 42 97 46 49.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":33,"prt":"€30–70"},{"n":"Le Bon Georges","t":"Bistrô de carnes","g":"Bistrô","c":"Paris","b":"Saint-Georges (9e)","ig":"","esp":"Steak tartare e tournedos Rossini da lista do Fabio","d":"45 rue Saint-Georges. Tournedos Rossini confirmado (Paris by Mouth, 2026); a Infatuation acha o tartare sem tempero. Aberto todo dia.","pr":"","prn":0,"ac":"reserva","acl":"Reserva","act":"Reserva em lebongeorges.paris ou +33 1 48 78 40 30.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":34,"prt":""},{"n":"L’Assiette","t":"Cozinha clássica","g":"Bistrô","c":"Paris","b":"Pernety (14e)","ig":"","esp":"O cassoulet (e o escargot) da lista do Fabio","d":"181 rue du Château. Cassoulet caseiro, vendido também na lojinha ao lado; pâté en croûte. No Guia Michelin 2026, sem estrela, €€€. Fecha segunda e terça.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva pelo +33 1 43 22 64 86.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":35,"prt":"€70–150"},{"n":"L’Ami Jean","t":"Bistrô basco-sudoeste","g":"Bistrô","c":"Paris","b":"Gros-Caillou (7e)","ig":"","esp":"Caça na temporada e o riz au lait — da lista do Fabio","d":"27 rue Malar. Riz au lait \"de Maman Philomène\"; lièvre à la royale na temporada. No Guia Michelin 2026, sem estrela, €€€. Fecha domingo e segunda; sábado só almoço.","pr":"$$$","prn":3,"ac":"reserva","acl":"Reserva","act":"Reserva obrigatória: +33 1 47 05 86 89 ou lamijean.fr.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":36,"prt":"€70–150"},{"n":"Maison Vérot","t":"Charcutaria","g":"Mercado e loja","c":"Paris","b":"Notre-Dame-des-Champs (6e)","ig":"","esp":"Terrines e pâté en croûte — a charcutaria da lista do Fabio","d":"Loja original: 3 rue Notre-Dame-des-Champs; outras na 7 rue Lecourbe (15e), 38 rue de Bretagne (3e) e nas Galeries Lafayette. Terça a sábado (horário de 2019).","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"Loja, para levar.","by":["fabmoon"],"bg":[],"src":"amigo","post":"https://www.instagram.com/p/DfVlAQwDEBN/","mi":false,"url":"","id":37,"prt":""},{"n":"Bar Nouveau","t":"Coquetéis","g":"Coquetel","c":"Paris","b":"Haut-Marais (3e)","ig":"","esp":"Coquetéis em dois andares, nº 15 do World’s 50 Best Bars 2026 — Fabio e Kaori passaram","d":"5 rue des Haudriettes. Térreo por ordem de chegada; no subsolo, degustação de seis coquetéis só com reserva, no fim de semana. 16h–1h; fecha segunda.","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"Térreo sem reserva.","by":["fabmoon","kaorichichijima"],"bg":[],"src":"amigo","post":"","mi":false,"url":"https://www.the50.com/bars/best-in-the-world/the-list/bar-nouveau.html","id":38,"prt":""},{"n":"The Cambridge Public House","t":"Pub de coquetel","g":"Coquetel","c":"Paris","b":"Marais (3e)","ig":"","esp":"O pub de coquetel nº 13 do World’s 50 Best Bars 2026 — o irish coffee que a Kaori aprovou","d":"No Marais. Endereço e horários não conferidos.","pr":"","prn":0,"ac":"","acl":"","act":"","by":["kaorichichijima"],"bg":[],"src":"amigo","post":"","mi":false,"url":"https://www.sortiraparis.com/en/where-to-eat-in-paris/bars-cafes/articles/183222-the-cambridge-public-house-new-bar-opens-in-paris-s-marais-district","id":39,"prt":""},{"n":"Bar 228 — Le Meurice","t":"Bar de hotel","g":"Coquetel","c":"Paris","b":"Tuileries (1er)","ig":"","esp":"O bar do palácio onde o Fabio começa o dia em Paris","d":"228 rue de Rivoli. Coquetel por volta de €25. O bar abre ao meio-dia (site oficial); o café da manhã do hotel é no Le Dalí, das 7h às 11h, e a pâtisserie é de Cédric Grolet.","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"","by":["fabmoon"],"bg":[],"src":"amigo","post":"","mi":false,"url":"https://www.dorchestercollection.com/paris/le-meurice/dining/bar-228","id":40,"prt":""},{"n":"Song Heng","t":"Phở e bò bún","g":"Outras cozinhas","c":"Paris","b":"Arts et Métiers (3e)","ig":"","esp":"Phở e bò bún num balcão do Marais — o almoço da Kaori","d":"3 rue Volta. Pratos a €12–13 em tamanho L ou XL (Le Fooding). Só almoço, 11h15–16h; fecha domingo.","pr":"$","prn":1,"ac":"fila","acl":"Fila","act":"Fila na calçada; chegue cedo.","by":["kaorichichijima"],"bg":[],"src":"amigo","post":"","mi":false,"url":"https://lefooding.com/restaurants/restaurant-song-heng","id":41,"prt":"até €30"},{"n":"Pierre Hermé — 2000 Feuilles","t":"Pâtisserie","g":"Doces e café","c":"Paris","b":"Saint-Germain (6e)","ig":"","esp":"O 2000 Feuilles que o Fabio \"tava com saudade\"","d":"Loja histórica: 72 rue Bonaparte. Mil-folhas de massa caramelizada, crêpe dentelle e praliné de avelã do Piemonte; individual a partir de €12 (site oficial). Seg–sáb 10h–20h, dom 10h–19h.","pr":"$","prn":1,"ac":"livre","acl":"Chega e senta","act":"Balcão, para levar.","by":["fabmoon"],"bg":[],"src":"amigo","post":"","mi":false,"url":"https://www.pierreherme.com/en/pastries/2000-feuilles-entremets.html","id":42,"prt":"até €30"},{"n":"Sadaharu Aoki","t":"Pâtisserie franco-japonesa","g":"Doces e café","c":"Paris","b":"Luxembourg (6e)","ig":"","esp":"Matcha, yuzu e gergelim — \"que delícia\", segundo o Fabio","d":"35 rue de Vaugirard (outra no 56 bd de Port-Royal, não reconfirmada). Bambou, éclair de matcha, torta de yuzu. Ter–sáb 11h–19h, dom 10h–18h; fecha segunda.","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"Para levar.","by":["fabmoon"],"bg":[],"src":"amigo","post":"","mi":false,"url":"","id":43,"prt":""},{"n":"Yann Couvreur","t":"Pâtisserie","g":"Doces e café","c":"Paris","b":"Goncourt (10e)","ig":"","esp":"\"Ninguém come mais doces do que eu em Paris\" — o Fabio na loja da raposa","d":"137 avenue Parmentier, com salão de chá. Mil-folhas de baunilha montado na hora, kouign amann. Horários divergem entre fontes.","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"","by":["fabmoon"],"bg":[],"src":"amigo","post":"","mi":false,"url":"","id":44,"prt":""},{"n":"Patrick Roger","t":"Chocolateria","g":"Doces e café","c":"Paris","b":"","ig":"","esp":"O chocolate esculpido que a Kaori provou","d":"Loja não conferida.","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"","by":["kaorichichijima"],"bg":[],"src":"amigo","post":"","mi":false,"url":"","id":45,"prt":""},{"n":"Marché d’Aligre","t":"Feira","g":"Mercado e loja","c":"Paris","b":"Aligre (12e)","ig":"","esp":"Vieiras, ostras e chèvres numa manhã de feira da Kaori","d":"Feira de rua e mercado coberto (Beauvau) no 12e. Horários não conferidos.","pr":"","prn":0,"ac":"livre","acl":"Chega e senta","act":"","by":["kaorichichijima"],"bg":[],"src":"amigo","post":"","mi":false,"url":"","id":46,"prt":""},{"n":"L’Avant Comptoir du Palais","t":"Bar de vinhos e tapas","g":"Bar e vinho","c":"Bordeaux","b":"Saint-Pierre","ig":"avant_comptoir_du_palais_","esp":"O Avant Comptoir de Bordeaux, ao pé da Porte Cailhau","d":"2 place du Palais. Carta funda de vinhos naturais; taça a partir de €3,50, €50–100 por pessoa (Pearl). Todo dia 12h–23h. Dono e sommelier: Julien Camdeborde (Star Wine List).","pr":"$$","prn":2,"ac":"livre","acl":"Chega e senta","act":"Aceita chegar sem reserva; +33 5 57 14 94 85.","by":[],"bg":["avant_comptoir_du_palais_"],"src":"salvo","post":"https://www.instagram.com/p/DeSCXo-upp7/","mi":false,"url":"","id":47,"prt":"€30–70"},{"n":"Euskalduna Studio","t":"Alta gastronomia","g":"Alta gastronomia","c":"Porto","b":"Bonfim","ig":"euskaldunastudio","esp":"O balcão de Vasco Coelho Santos — uma estrela Michelin","d":"Salvo de um post; endereço, preço e reserva não conferidos.","pr":"","prn":0,"ac":"","acl":"","act":"","by":[],"bg":["travel_eat_joy_repeat"],"src":"salvo","post":"https://www.instagram.com/p/DfN0IFbgn5o/","mi":true,"url":"","id":48,"prt":""}],"amigos":{"fabmoon":["Fabio Moon","quadrinista; os bistrôs de Paris e o roteiro de pintxos de Donostia"],"kaorichichijima":["Kaori Muranaka","chef do Quito Quito Izakaya; a Paris dos stories, de feira a três estrelas"]},"cidades":["San Sebastián","Getaria","Tolosa","Axpe","Barcelona","Sagàs","Madri","Paris","Bordeaux","Porto"],"grupos":["Pintxos e balcão","Asador e brasa","Peixe e marisco","Bistrô","Alta gastronomia","Bar e vinho","Coquetel","Doces e café","Mercado e loja","Outras cozinhas"]}</script>
+<script>
+const D = JSON.parse(document.getElementById('dados').textContent);
+const $ = s => document.querySelector(s);
+const esc = s => (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let F = {q:'', oque:'comer', cidade:new Set(), grupo:new Set(), acesso:new Set(), preco:new Set(),
+         amigo:null, soAmigo:false, soRoteiro:false};
+let ROT = new Set();
+try{ ROT = new Set(JSON.parse(localStorage.getItem('eu_roteiro')||'[]')); }catch(e){}
+const salvaRot = () => { try{ localStorage.setItem('eu_roteiro', JSON.stringify([...ROT])); }catch(e){} };
+
+const ACC = {livre:'ok',fila:'ok',dias:'ok',reserva:'med',semanas:'med',meses:'hard',fechado:'shut'};
+const YEN = {1:'até €30',2:'€30–70',3:'€70–150',4:'€150+'};
+const PAIS = {"San Sebastián": "Spain", "Getaria": "Spain", "Tolosa": "Spain", "Axpe": "Spain", "Barcelona": "Spain", "Sagàs": "Spain", "Madri": "Spain", "Paris": "France", "Bordeaux": "France", "Porto": "Portugal"};
+const gmaps = x => 'https://www.google.com/maps/search/?api=1&query=' +
+  encodeURIComponent([x.n, x.b, x.c||'', PAIS[x.c]||''].filter(Boolean).join(' '));
+
+function passa(x){
+  const macro = x.g==='Hotel' ? 'hotel' : (x.g==='Ver e área' ? 'passeio' : 'comer');
+  if(F.oque && macro!==F.oque) return false;
+  if(F.cidade.size && !F.cidade.has(x.c||'Sem cidade')) return false;
+  if(F.grupo.size && !F.grupo.has(x.g)) return false;
+  if(F.acesso.size && !F.acesso.has(x.ac||'?')) return false;
+  if(F.preco.size && !F.preco.has(String(x.prn))) return false;
+  if(F.soAmigo && !(x.by&&x.by.length)) return false;
+  if(F.soRoteiro && !ROT.has(x.id)) return false;
+  if(F.amigo && !(x.by||[]).includes(F.amigo)) return false;
+  if(F.q){
+    const h = [x.n,x.b,x.c,x.t,x.g,x.esp,x.d,x.ig,(x.by||[]).join(' '),(x.bg||[]).join(' ')].join(' ').toLowerCase();
+    if(!F.q.split(/\s+/).every(w => h.includes(w))) return false;
+  }
+  return true;
+}
+
+function card(x){
+  const a = x.ac ? `<span class="tag ${ACC[x.ac]||''}">${esc(x.acl)}</span>` : '';
+  const p = x.prn
+    ? `<span class="tag yen">${YEN[x.prn]}</span>` : '';
+  const loc = [x.b && x.b!==x.c ? x.b : '', x.c].filter(Boolean).join(' · ') || 'Europa';
+  const who = (x.by||[]).length
+    ? `<div class="who"><span class="lbl">já postou de lá:</span> ` +
+      x.by.map(b=>`<b>${esc((D.amigos[b]||[b])[0])}</b>`).join(', ') +
+      (x.by.length>1?` <span class="lbl">(${x.by.length} pessoas)</span>`:'') + `</div>`
+    : ((x.bg||[]).length ? `<div class="who g"><span class="lbl">salvo de:</span> ${x.bg.map(b=>'@'+esc(b)).join(', ')}</div>` : '');
+  const acts = [];
+  if(x.ig) acts.push(`<a href="https://instagram.com/${esc(x.ig)}" target="_blank" rel="noopener">@${esc(x.ig)}</a>`);
+  acts.push(`<a href="${gmaps(x)}" target="_blank" rel="noopener">mapa</a>`);
+  if(x.post) acts.push(`<a href="${x.post}" target="_blank" rel="noopener">post</a>`);
+  if(x.url) acts.push(`<a href="${x.url}" target="_blank" rel="noopener">fonte</a>`);
+  const mich = !!x.mi;
+  const cat = mich ? 'cat-mich' : ((x.g==='Hotel'||x.g==='Ver e área') ? 'cat-hotel' : 'cat-food');
+  const duo = !mich && cat==='cat-food' && (x.by||[]).length>=2;
+  const prc = (cat!=='cat-hotel' && x.prn) ? ' pr'+x.prn : '';
+  const badge = mich ? '<span class="badge mich">★ estrela Michelin</span>'
+    : (x.g==='Hotel' ? '<span class="badge ver">Hotel</span>'
+    : (x.g==='Ver e área' ? '<span class="badge ver">Passeio</span>'
+    : (duo ? `<span class="badge duo">${x.by.length} pessoas já foram</span>` : '')));
+  return `<article class="c${x.by&&x.by.length?' hi':''} ${cat}${prc}">
+    <button class="fav" data-id="${x.id}" aria-pressed="${ROT.has(x.id)}"
+      aria-label="Salvar no roteiro">${ROT.has(x.id)?'★':'☆'}</button>
+    ${badge}
+    <div class="cn">${mich?'<span class="mstar">★</span>':''}<a href="${gmaps(x)}" target="_blank" rel="noopener"
+      title="Abrir no Google Maps">${esc(x.n)}</a></div>
+        <div class="cloc"><span class="t">${esc(x.t)}</span> · ${esc(loc)}</div>
+    ${x.esp ? `<div class="cesp">${esc(x.esp)}</div>`:''}
+    ${x.d ? `<div class="cloc" style="margin-top:6px;line-height:1.5">${esc(x.d)}</div>`:''}
+    <div class="tags">${p}${a}</div>
+    ${x.act ? `<div class="cloc" style="margin-top:6px">${esc(x.act)}</div>`:''}
+    ${who}
+    <div class="acts">${acts.join('')}</div>
+  </article>`;
+}
+
+const ROTULO = {livre:'Chega e senta',fila:'Fila',dias:'Dias antes',reserva:'Reserva',
+  semanas:'Semanas antes',meses:'Meses antes',fechado:'Quase fechado',
+  '1':'até €30','2':'€30–70','3':'€70–150','4':'€150+'};
+function atualizaResumo(){
+  const at = [...F.cidade, ...F.grupo, ...[...F.acesso].map(v=>ROTULO[v]||v),
+              ...[...F.preco].map(v=>ROTULO[v]||v)];
+  const n = at.length;
+  $('#ftoggle').textContent = n ? `Filtros · ${n}` : 'Filtros';
+  const r = $('#resumo');
+  const fechado = $('#facets').classList.contains('hidden');
+  r.classList.toggle('hidden', !(fechado && n));
+  if(fechado && n) r.innerHTML = 'Filtrando por <b>' + at.map(esc).join('</b>, <b>') + '</b>';
+}
+
+function render(){
+  atualizaResumo();
+  const vis = D.lugares.filter(passa).sort((a,b)=>
+    (b.by.length - a.by.length) || ((b.prn||0) - (a.prn||0)) || a.n.localeCompare(b.n,'pt'));
+  // seções por cidade, na ordem editorial
+  const ORD = D.cidades;
+  const porCid = new Map();
+  vis.forEach(x=>{
+    const c = x.c || 'Sem cidade';
+    if(!porCid.has(c)) porCid.set(c, []);
+    porCid.get(c).push(x);
+  });
+  let out = '';
+  ORD.forEach(c=>{
+    const xs = porCid.get(c);
+    if(!xs) return;
+    const rot = c==='Sem cidade' ? 'Europa afora' : c;
+    out += `<h2 class="sech">${rot}<small>${xs.length} ${xs.length===1?'lugar':'lugares'}</small></h2>`;
+    out += xs.map(card).join('');
+  });
+  $('#grid').innerHTML = vis.length ? out
+    : `<div class="empty">Nada com esses filtros. <button class="linkbtn" id="limpa2">Limpar</button></div>`;
+  const nA = vis.filter(x=>x.by.length).length;
+  $('#cont').textContent = vis.length===D.lugares.length
+    ? `${D.lugares.length} lugares · ${nA} com amigo que já foi`
+    : `${vis.length} de ${D.lugares.length} lugares · ${nA} com amigo que já foi`;
+  $('#rotn').textContent = ROT.size ? `★ ${ROT.size}` : '★ roteiro';
+  const e = $('#limpa2'); if(e) e.onclick = limpar;
+}
+
+function limpar(){
+  F = {q:'',oque:'comer',cidade:new Set(),grupo:new Set(),acesso:new Set(),preco:new Set(),
+       amigo:null,soAmigo:false,soRoteiro:false};
+  document.querySelectorAll('#oque button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.oque==='comer'));
+  $('#q').value='';
+  document.querySelectorAll('.chip[data-f]').forEach(c=>c.setAttribute('aria-pressed','false'));
+  $('#soAmigo').setAttribute('aria-pressed','false');
+  $('#rotn').setAttribute('aria-pressed','false');
+  $('#amigoAtivo').classList.add('hidden');
+  render();
+}
+
+function chips(sel, campo, itens){
+  $(sel).insertAdjacentHTML('beforeend', itens.map(([v,rot,ct])=>
+    `<button class="chip" data-f="${campo}" data-v="${esc(v)}" aria-pressed="false">${esc(rot)}${
+      ct!=null?`<span class="ct">${ct}</span>`:''}</button>`).join(''));
+}
+
+const cnt = (fn) => { const m={}; D.lugares.forEach(x=>{const k=fn(x); m[k]=(m[k]||0)+1;}); return m; };
+
+const cCid = cnt(x=>x.c||'Sem cidade');
+chips('#fCidade','cidade', D.cidades.map(c=>[c,c,cCid[c]]));
+const cGrp = cnt(x=>x.g);
+chips('#fCozinha','grupo', D.grupos.filter(g=>g!=='Hotel'&&g!=='Ver e área').map(g=>[g,g,cGrp[g]]));
+const cAc = cnt(x=>x.ac||'?');
+const ACL = [['livre','Chega e senta'],['fila','Fila'],['dias','Dias antes'],
+             ['reserva','Reserva'],['semanas','Semanas antes'],['meses','Meses antes'],
+             ['fechado','Quase fechado']];
+chips('#fAcesso','acesso', ACL.filter(([k])=>cAc[k]).map(([k,r])=>[k,r,cAc[k]]));
+const cPr = cnt(x=>String(x.prn));
+chips('#fPreco','preco', [['1','até €30'],['2','€30–70'],['3','€70–150'],['4','€150+']]
+  .filter(([k])=>cPr[k]).map(([k,r])=>[k,r,cPr[k]]));
+
+document.addEventListener('click', ev => {
+  const ch = ev.target.closest('.chip[data-f]');
+  if(ch){
+    const s = F[ch.dataset.f], v = ch.dataset.v;
+    if(s.has(v)){ s.delete(v); ch.setAttribute('aria-pressed','false'); }
+    else { s.add(v); ch.setAttribute('aria-pressed','true'); }
+    render(); return;
+  }
+  const fv = ev.target.closest('.fav');
+  if(fv){
+    const id = +fv.dataset.id;
+    if(ROT.has(id)) ROT.delete(id); else ROT.add(id);
+    salvaRot(); render(); return;
+  }
+  const pp = ev.target.closest('.p[data-amigo]');
+  if(pp){
+    F.amigo = (F.amigo===pp.dataset.amigo) ? null : pp.dataset.amigo;
+    $('#amigoAtivo').classList.toggle('hidden', !F.amigo);
+    if(F.amigo) $('#amigoNome').textContent = (D.amigos[F.amigo]||[F.amigo])[0];
+    render();
+    document.getElementById('lista').scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+});
+
+const abreFacets = matchMedia('(min-width:900px)').matches;
+$('#facets').classList.toggle('hidden', !abreFacets);
+$('#ftoggle').setAttribute('aria-pressed', abreFacets);
+$('#ftoggle').onclick = function(){
+  const aberto = $('#facets').classList.toggle('hidden') === false;
+  this.setAttribute('aria-pressed', aberto);
+  atualizaResumo();
+};
+
+/* ao começar a navegar a lista, recolhe o painel uma vez para liberar tela */
+let jaRecolheu = false;
+addEventListener('scroll', () => {
+  if(jaRecolheu) return;
+  const lim = document.querySelector('header').offsetHeight + 120;
+  if(scrollY > lim && !$('#facets').classList.contains('hidden')){
+    jaRecolheu = true;
+    $('#facets').classList.add('hidden');
+    $('#ftoggle').setAttribute('aria-pressed','false');
+    atualizaResumo();
+  }
+}, {passive:true});
+
+$('#q').addEventListener('input', e => { F.q = e.target.value.trim().toLowerCase(); render(); });
+$('#soAmigo').onclick = function(){ F.soAmigo=!F.soAmigo;
+  this.setAttribute('aria-pressed',F.soAmigo); render(); };
+$('#rotn').onclick = function(){ F.soRoteiro=!F.soRoteiro;
+  this.setAttribute('aria-pressed',F.soRoteiro); render(); };
+$('#limpa').onclick = limpar;
+$('#tiraAmigo').onclick = () => { F.amigo=null; $('#amigoAtivo').classList.add('hidden'); render(); };
+
+render();
+</script>
+
+</body></html>
